@@ -10,5 +10,5 @@ class TS_MyTests
     return suite
   end
 end
-Test::Unit::UI::Console::TestRunner.run(TS_MyTests)
+#Test::Unit::UI::Console::TestRunner.run(TS_MyTests)
 
