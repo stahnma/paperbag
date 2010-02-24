@@ -1,0 +1,12 @@
+files
+hosts
+mailaliases
+
+
+not tested
+-----------
+augues
+computer (mac os x only)
+filebucket
+group
+
