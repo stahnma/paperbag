@@ -1,5 +1,6 @@
 import "../helpers/user_add.pp"
 
+notice("Attempting to create cronjob in test-user's crontab")
 cron { "uptime":
     name => "uptime",
     command => "/opt/freeware/bin/uptime",
