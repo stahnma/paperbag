@@ -1,1 +1,9 @@
-Just a stub for now.
+Paperbag is designed to be a really basic testing framework for puppet on various platforms.  The idea for me was simply that I had multiple platforms to manage and not every resource type worked properly on each platform.  
+
+Ideally this would be a complete and comprehensive test of each resource type and all parameters, however, one must crawl before one walks. 
+
+Currently this runs extremely simple manifests and then validates the results of the manifests using test/unit ruby scripts.  Eventually I will add the hooks toe have this plug into a Hudson CI server via an external job monitor.
+
+I am sure there are bugs and features missing.  If you want to help, open issues on github, or fork and improve the code. 
+
+The name paperbag was chosen because the simplest form of a puppet I could thin of was a lunch-sized paper bag.  I figured this was doing really simple things with puppet, so I named it paperbag.
