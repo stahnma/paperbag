@@ -15,11 +15,3 @@ file { "/home/test_user/bar":
   ensure => "/home/test_user/foo",
   subscribe  => File["/home/test_user/foo"]
 }
-
-cron { "uptime":
-    command => "/opt/freeware/bin/uptime",
-    user => root,
-    hour => 2,
-    minute => 0
-}
-
