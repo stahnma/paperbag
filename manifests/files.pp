@@ -1,17 +1,18 @@
-file { "/home/test_user":
+# Manifest does the following:
+#  creates /home/test-user
+#  creates the file /home/test-user/foo
+#      ownership root:bin 
+#      permissions 775
+#      contents are /etc/passwd
+file { "/home/test-user":
     ensure => directory,
 }
 
-file { "/home/test_user/foo":
+file { "/home/test-user/foo":
   ensure => present,
-  owner => stahnma,
+  owner => root,
   group => bin,
   mode => 775,
-  subscribe => File["/home/test_user"],
+  subscribe => File["/home/test-user"],
   source => "/etc/passwd"
-}
-
-file { "/home/test_user/bar":
-  ensure => "/home/test_user/foo",
-  subscribe  => File["/home/test_user/foo"]
 }
