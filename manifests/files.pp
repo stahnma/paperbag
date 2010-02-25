@@ -1,18 +1,17 @@
 # Manifest does the following:
-#  creates /home/test-user
-#  creates the file /home/test-user/foo
-#      ownership root:bin 
+#  creates /tmp/test-user
+#  creates the file /tmp/test-user/foo
+#      ownership root
 #      permissions 775
 #      contents are /etc/passwd
-file { "/home/test-user":
+file { "/tmp/test-user":
     ensure => directory,
 }
 
-file { "/home/test-user/foo":
+file { "/tmp/test-user/foo":
   ensure => present,
   owner => root,
-  group => bin,
   mode => 775,
-  subscribe => File["/home/test-user"],
+  subscribe => File["/tmp/test-user"],
   source => "/etc/passwd"
 }
