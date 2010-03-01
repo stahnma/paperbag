@@ -1,4 +1,4 @@
-notice("Adding test-user via helper")
-user { "test-user": 
+notice("Adding testuser via helper")
+user { "testuser": 
   ensure => present,
 }

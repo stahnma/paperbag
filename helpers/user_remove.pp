@@ -1,4 +1,4 @@
-notice("Removing test-user via helper")
-user { "test-user":
+notice("Removing testuser via helper")
+user { "testuser":
   ensure => absent,
 }

@@ -17,7 +17,7 @@ class Exec_resource_test < Test::Unit::TestCase
   end
 
   def test_puppet_exec
-    system("/usr/bin/puppet #{MANIFEST_DIR}/exec.pp")
+    system("puppet #{MANIFEST_DIR}/exec.pp")
     a = File.stat("/tmp/puppet-exec-test")
     assert(a.class.to_s == "File::Stat")
   end

@@ -5,15 +5,15 @@ require File.dirname(__FILE__) + '/../tests/testing_defs'
 
 class File_resource_test < Test::Unit::TestCase
   def setup
-    system("/usr/bin/puppet #{MANIFEST_DIR}/files.pp")
+    system("puppet #{MANIFEST_DIR}/files.pp")
   end
 
   def teardown
-    system('rm -rf /tmp/test-user')
+    system('rm -rf /tmp/testuser')
   end
 
   def test_puppet_file_dir
-    a = File.stat("/tmp/test-user")
+    a = File.stat("/tmp/testuser")
     # Exists
     assert(a.class.to_s == "File::Stat")
     # Is a directory
@@ -21,13 +21,13 @@ class File_resource_test < Test::Unit::TestCase
   end
   
   def test_puppet_file_created
-    a = File.stat("/tmp/test-user/foo")
+    a = File.stat("/tmp/testuser/foo")
     # Exists
     assert(a.class.to_s == "File::Stat")
     # Owner is root	
     assert(a.uid == 0)
     # Contents contain something somewhat like a passwd file
-    rootline = `grep ^root /tmp/test-user/foo`
-    assert(rootline =~ /root\:\*\:0/ )
+    rootline = `grep ^root /tmp/testuser/foo`
+    assert(rootline =~ /root\:.\:0/ )
   end
 end
