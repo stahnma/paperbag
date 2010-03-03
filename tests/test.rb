@@ -2,6 +2,7 @@ require File.dirname(__FILE__)  + '/../tests/test_user'
 require File.dirname(__FILE__)  + '/../tests/test_cron'
 require File.dirname(__FILE__)  + '/../tests/test_exec'
 require File.dirname(__FILE__)  + '/../tests/test_file'
+require File.dirname(__FILE__)  + '/../tests/test_host'
 require 'test/unit/testsuite'
 
 class TS_MyTests
